@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1009560653636",
+    "project_id": "memories-app-667c7",
+    "storage_bucket": "memories-app-667c7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1009560653636:android:8fbf8a88ca0fc55f255111",
+        "android_client_info": {
+          "package_name": "com.example.memories_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHuchoTqFyz_020eDxxXaAVUitQDjtDpM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
