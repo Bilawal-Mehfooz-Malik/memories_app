@@ -60,7 +60,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final selectionNotifier = ref.watch(selectionNotifierProvider);
-
+    final lightTheme = Theme.of(context).brightness == Brightness.light;
     void deleteSelectedMemories() async {
       for (String memoryId in selectionNotifier.selectedMemories) {
         await FirebaseFirestore.instance
@@ -143,7 +143,13 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   }
 
                   if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
-                    return const Center(child: Text('No memories found.'));
+                    return Center(
+                        child: Text(
+                      'No memories found.',
+                      style: TextStyle(
+                        color: lightTheme ? Colors.black : Colors.white,
+                      ),
+                    ));
                   }
 
                   final memories = snapshot.data!.docs;

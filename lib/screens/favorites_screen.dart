@@ -59,6 +59,7 @@ class _FavoriteScreenState extends ConsumerState<FavoriteScreen> {
   @override
   Widget build(BuildContext context) {
     final selectionNotifier = ref.watch(selectionNotifierProvider);
+    final lightTheme = Theme.of(context).brightness == Brightness.light;
 
     void deleteSelectedMemories() async {
       for (String memoryId in selectionNotifier.selectedMemories) {
@@ -94,7 +95,13 @@ class _FavoriteScreenState extends ConsumerState<FavoriteScreen> {
             }
 
             if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
-              return const Center(child: Text('No favorite memories found.'));
+              return Center(
+                  child: Text(
+                'No favorite memories found.',
+                style: TextStyle(
+                  color: lightTheme ? Colors.black : Colors.white,
+                ),
+              ));
             }
 
             if (snapshot.hasError) {
